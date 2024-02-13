@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+        <div class="head-bread">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="active">REGISTER</li>
+                </ol>
+            </div>
+        </div>
+        <!-- reg-form -->
+	<div class="reg-form">
+		<div class="container">
+			<div class="reg">
+				<h3>Register Now</h3>
+				<p>Welcome, please enter the following details to continue.</p>
+				 <form method="post">
+					 {% csrf_token %}
+					<ul>
+						<li class="text-info">First Name: </li>
+						<li><input type="text" id="register-name" name="name" value=""></li>
+					</ul>
+					<ul>
+						<li class="text-info">Last Name: </li>
+						<li><input type="text" id="register-lastname" name="Lastname" value=""></li>
+					 </ul>				 
+					<ul>
+						<li class="text-info">Email: </li>
+						<li><input type="text" id="register-email" name="email" value=""></li>
+					</ul>
+					<ul>
+						<li class="text-info">Password: </li>
+						<li><input type="password" id="register-password" name="password" value=""></li>
+					</ul>
+					<ul>
+						<li class="text-info">Mobile Number:</li>
+						<li><input type="text" value=""></li>
+					</ul>						
+					<input type="submit" value="Register Now">
+					</form>
+			</div>
+		</div>
+	</div>
+</body>
+{% endblock content %}
